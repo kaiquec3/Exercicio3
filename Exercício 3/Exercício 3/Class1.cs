@@ -6,28 +6,54 @@ namespace Exercício_3
 {
     class Quadrado
     {
+        #region Atributos
         double diagonal;
         double area;
+        #endregion
 
-        public void SetDiagonal(double p)
+        #region Construtores
+        public Quadrado()
         {
-            diagonal = p;
+            this.diagonal = 0;
+            this.area = 0;
+        }
+
+        public Quadrado(double diagonal)
+        {
+            this.diagonal = diagonal;
+            this.area = 0;
+        }
+        #endregion
+
+        #region Setters e Getters
+        public void SetDiagonal(double diagonal)
+        {
+            this.diagonal = diagonal;
         }
 
         public double GetDiagonal()
         {
-            return diagonal;
+            return this.diagonal;
         }
 
         public double GetArea()
         {
-            return area;
+            return this.area;
         }
+        #endregion
 
+        #region Métodos funcionais
         public double CalcularArea()
         {
-            area = Math.Pow(diagonal, 2)/2;
-            return area;
+            this.area = Math.Pow(this.diagonal, 2)/2;
+            return this.area;
         }
+
+        public double CalcularArea(double diagonal)
+        {
+            this.area = Math.Pow(diagonal, 2) / 2;
+            return this.area;
+        }
+        #endregion
     }
 }
